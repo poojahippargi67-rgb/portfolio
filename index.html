@@ -1,195 +1,294 @@
+```html
 <!DOCTYPE html>
-
 <html class="dark" lang="en">
 
 <head>
+
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
 
 <title>Pooja Hippargi Portfolio</title>
 
-<!-- Fonts -->
+<!-- ================= FONTS ================= -->
 
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
 
-<!-- Material Symbols -->
+<link
+href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+rel="stylesheet"/>
 
-<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<!-- ================= MATERIAL SYMBOLS ================= -->
 
-<!-- Tailwind CSS -->
+<link
+href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+rel="stylesheet"/>
+
+<!-- ================= TAILWIND CSS ================= -->
 
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 
 <script>
+
 tailwind.config = {
-  darkMode: "class",
-  theme: {
-    extend: {
-      colors: {
-        primary: "#3B82F6",
-        orange: "#F97316",
-        background: "#000000",
-        surface: "#0F172A",
-        text: "#FFFFFF",
-        muted: "#94A3B8"
-      },
-      fontFamily: {
-        display: ["Geist"],
-        body: ["Geist"],
-        mono: ["JetBrains Mono"]
-      }
+
+    darkMode: "class",
+
+    theme: {
+
+        extend: {
+
+            colors: {
+
+                primary: "#3B82F6",
+                orange: "#F97316",
+                background: "#000000",
+                surface: "#0F172A",
+                text: "#FFFFFF",
+                muted: "#94A3B8"
+
+            },
+
+            fontFamily: {
+
+                display: ["Geist"],
+                body: ["Geist"],
+                mono: ["JetBrains Mono"]
+
+            }
+
+        }
+
     }
-  }
+
 }
+
 </script>
 
+
+<!-- ================= CUSTOM CSS ================= -->
+
 <style>
+
 * {
     scroll-behavior: smooth;
 }
 
 body {
+
     background: #000000;
     color: #ffffff;
     font-family: Geist, sans-serif;
     -webkit-font-smoothing: antialiased;
+
 }
 
 .glass-card {
+
     background: #0F172A;
     border: 1px solid rgba(255,255,255,0.10);
     transition: all 0.3s ease;
+
 }
 
 .glass-card:hover {
+
     border-color: rgba(59,130,246,0.5);
     box-shadow: 0 0 30px rgba(59,130,246,0.15);
     transform: translateY(-3px);
+
 }
 
 .btn-primary {
+
     background: #3B82F6;
     color: white;
     transition: all 0.2s ease;
+
 }
 
 .btn-primary:hover {
+
     filter: brightness(1.15);
     transform: translateY(-2px);
+
 }
 
 .btn-cta {
+
     background: #F97316;
     color: white;
     transition: all 0.2s ease;
+
 }
 
 .btn-cta:hover {
+
     filter: brightness(1.1);
     transform: translateY(-2px);
+
 }
 
 .btn-ghost {
+
     background: transparent;
     border: 1px solid #3B82F6;
     color: #3B82F6;
     transition: all 0.2s ease;
+
 }
 
 .btn-ghost:hover {
+
     background: rgba(59,130,246,0.10);
+
 }
 
 .data-chip {
+
     background: rgba(59,130,246,0.10);
     border: 1px solid rgba(59,130,246,0.30);
     color: #60A5FA;
+
 }
 
 .material-symbols-outlined {
+
     font-variation-settings:
     'FILL' 0,
     'wght' 300,
     'GRAD' 0,
     'opsz' 24;
+
     color: #3B82F6;
+
 }
 
 .bg-grid {
+
     background-size: 40px 40px;
+
     background-image:
-        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
-        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+
+        linear-gradient(
+            to right,
+            rgba(255,255,255,0.03) 1px,
+            transparent 1px
+        ),
+
+        linear-gradient(
+            to bottom,
+            rgba(255,255,255,0.03) 1px,
+            transparent 1px
+        );
+
 }
 
 .nav-active {
+
     color: #3B82F6 !important;
     font-weight: bold;
     border-bottom: 2px solid #3B82F6;
     padding-bottom: 4px;
+
 }
 
 .mobile-menu {
+
     display: none;
+
 }
 
 .mobile-menu.active {
+
     display: flex;
+
 }
 
 section {
+
     scroll-margin-top: 90px;
+
 }
+
 </style>
 
 </head>
 
+
 <body class="bg-black text-white overflow-x-hidden">
 
-<!-- ================= NAVBAR ================= -->
+
+<!-- ===================================================== -->
+<!-- NAVBAR -->
+<!-- ===================================================== -->
 
 <nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
 
 <div class="max-w-6xl mx-auto px-5 md:px-6 h-20 flex justify-between items-center">
 
+
 <!-- Portfolio Name -->
 
-<a href="#home"
+<a
+href="#home"
 class="font-display text-2xl font-bold tracking-tight hover:text-blue-400 transition">
 
 Pooja Hippargi Portfolio
 
 </a>
 
+
 <!-- Desktop Navigation -->
 
 <div class="hidden md:flex items-center gap-7">
 
-<a href="#home" class="nav-active">Home</a>
+<a href="#home" class="nav-active">
+Home
+</a>
 
-<a href="#about"
+<a
+href="#about"
 class="text-slate-400 hover:text-blue-400 transition">
-About </a>
 
-<a href="#skills"
-class="text-slate-400 hover:text-blue-400 transition">
-Skills </a>
+About
 
-<a href="#projects"
-class="text-slate-400 hover:text-blue-400 transition">
-Projects </a>
+</a>
 
-<a href="#services"
+<a
+href="#skills"
 class="text-slate-400 hover:text-blue-400 transition">
-Services </a>
 
-<a href="#contact"
+Skills
+
+</a>
+
+<a
+href="#projects"
 class="text-slate-400 hover:text-blue-400 transition">
-Contact </a>
+
+Projects
+
+</a>
+
+<a
+href="#services"
+class="text-slate-400 hover:text-blue-400 transition">
+
+Services
+
+</a>
+
+<a
+href="#contact"
+class="text-slate-400 hover:text-blue-400 transition">
+
+Contact
+
+</a>
 
 </div>
+
 
 <!-- Mobile Menu Button -->
 
@@ -206,43 +305,70 @@ menu
 
 </div>
 
+
 <!-- Mobile Navigation -->
 
-<div id="mobileMenu"
+<div
+id="mobileMenu"
 class="mobile-menu md:hidden flex-col bg-black border-t border-white/10 px-6 py-5 gap-5">
 
-<a onclick="closeMenu()" href="#home">Home</a>
+<a onclick="closeMenu()" href="#home">
+Home
+</a>
 
-<a onclick="closeMenu()" href="#about">About</a>
+<a onclick="closeMenu()" href="#about">
+About
+</a>
 
-<a onclick="closeMenu()" href="#skills">Skills</a>
+<a onclick="closeMenu()" href="#skills">
+Skills
+</a>
 
-<a onclick="closeMenu()" href="#projects">Projects</a>
+<a onclick="closeMenu()" href="#projects">
+Projects
+</a>
 
-<a onclick="closeMenu()" href="#services">Services</a>
+<a onclick="closeMenu()" href="#services">
+Services
+</a>
 
-<a onclick="closeMenu()" href="#contact">Contact</a>
+<a onclick="closeMenu()" href="#contact">
+Contact
+</a>
 
 </div>
 
 </nav>
 
-<!-- ================= MAIN ================= -->
+
+
+<!-- ===================================================== -->
+<!-- MAIN -->
+<!-- ===================================================== -->
 
 <main>
 
-<!-- ================= HERO ================= -->
 
-<section id="home"
+<!-- ===================================================== -->
+<!-- HERO -->
+<!-- ===================================================== -->
+
+<section
+id="home"
 class="relative min-h-screen flex items-center pt-32 pb-24 bg-grid">
 
 <div class="max-w-6xl mx-auto px-5 md:px-6 w-full">
 
 <div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
 
+
+<!-- Hero Text -->
+
 <div class="md:col-span-8">
 
-<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full data-chip font-mono text-sm mb-6">
+
+<div
+class="inline-flex items-center gap-2 px-4 py-2 rounded-full data-chip font-mono text-sm mb-6">
 
 <span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
 
@@ -250,25 +376,33 @@ Available for Opportunities
 
 </div>
 
-<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
+
+<h1
+class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
 
 Hi, I'm
 
 <span class="text-blue-500">
+
 Pooja Shrishail Hippargi
+
 </span>
 
 </h1>
+
 
 <h2 class="text-xl md:text-2xl text-blue-400 font-medium mb-6">
 
 Computer Science Engineering Student
 
-<span class="text-slate-500"> | </span>
+<span class="text-slate-500">
+|
+</span>
 
 Aspiring Data Analyst
 
 </h2>
+
 
 <p class="text-lg text-slate-400 max-w-2xl leading-8 mb-8">
 
@@ -278,9 +412,12 @@ in Python, SQL, Excel, Power BI and data analytics.
 
 </p>
 
+
 <div class="flex flex-wrap gap-4">
 
-<a href="#projects"
+
+<a
+href="#projects"
 class="btn-primary px-6 py-3 rounded-md font-mono inline-flex items-center gap-2">
 
 View My Projects
@@ -291,7 +428,9 @@ arrow_forward
 
 </a>
 
-<a href="#contact"
+
+<a
+href="#contact"
 class="btn-cta px-6 py-3 rounded-md font-mono inline-flex items-center gap-2">
 
 Let's Connect
@@ -302,23 +441,30 @@ arrow_forward
 
 </a>
 
-</div>
 
 </div>
 
-<!-- Hero Data Graphic -->
+</div>
+
+
+
+<!-- Hero Graphic -->
 
 <div class="hidden md:block md:col-span-4">
 
-<div class="glass-card rounded-xl h-[400px] p-8 flex items-end gap-4">
+<div
+class="glass-card rounded-xl h-[400px] p-8 flex items-end gap-4">
+
 
 <div class="w-1/5 bg-blue-500/30 h-[30%] rounded-t"></div>
 
 <div class="w-1/5 bg-blue-500/50 h-[50%] rounded-t"></div>
 
-<div class="w-1/5 bg-blue-500/80 h-[80%] rounded-t relative">
+<div
+class="w-1/5 bg-blue-500/80 h-[80%] rounded-t relative">
 
-<span class="absolute -top-8 left-1/2 -translate-x-1/2
+<span
+class="absolute -top-8 left-1/2 -translate-x-1/2
 text-orange-500 font-mono text-sm">
 
 94%
@@ -331,6 +477,7 @@ text-orange-500 font-mono text-sm">
 
 <div class="w-1/5 bg-orange-500/60 h-[40%] rounded-t"></div>
 
+
 </div>
 
 </div>
@@ -341,7 +488,11 @@ text-orange-500 font-mono text-sm">
 
 </section>
 
-<!-- ================= ABOUT ================= -->
+
+
+<!-- ===================================================== -->
+<!-- ABOUT -->
+<!-- ===================================================== -->
 
 <section id="about" class="py-24">
 
@@ -349,7 +500,11 @@ text-orange-500 font-mono text-sm">
 
 <div class="grid grid-cols-1 md:grid-cols-12 gap-8">
 
+
+<!-- About -->
+
 <div class="md:col-span-7 glass-card rounded-xl p-8 md:p-10">
+
 
 <div class="flex items-center gap-3 mb-6">
 
@@ -363,6 +518,7 @@ About Me
 
 </div>
 
+
 <p class="text-slate-400 text-lg leading-8 mb-6">
 
 I am a detail-oriented Computer Science Engineering student
@@ -370,6 +526,7 @@ with a strong foundation in programming, databases and data
 analytics.
 
 </p>
+
 
 <p class="text-slate-400 text-lg leading-8">
 
@@ -379,7 +536,10 @@ decisions.
 
 </p>
 
-<div class="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 gap-6">
+
+<div
+class="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 gap-6">
+
 
 <div>
 
@@ -393,6 +553,7 @@ B.Tech Computer Science Engineering
 
 </div>
 
+
 <div>
 
 <p class="text-blue-400 font-mono text-sm mb-1">
@@ -405,14 +566,19 @@ Data Analytics
 
 </div>
 
+
 </div>
 
 </div>
+
+
 
 <!-- Skills -->
 
-<div id="skills"
+<div
+id="skills"
 class="md:col-span-5 glass-card rounded-xl p-8 md:p-10">
+
 
 <div class="flex items-center gap-3 mb-6">
 
@@ -426,29 +592,50 @@ Skills
 
 </div>
 
+
 <div class="flex flex-wrap gap-3">
 
-<span class="px-4 py-2 rounded-full data-chip">Python</span>
 
-<span class="px-4 py-2 rounded-full data-chip">SQL</span>
+<span class="px-4 py-2 rounded-full data-chip">
+Python
+</span>
 
-<span class="px-4 py-2 rounded-full data-chip">MySQL</span>
+<span class="px-4 py-2 rounded-full data-chip">
+SQL
+</span>
 
-<span class="px-4 py-2 rounded-full data-chip">Excel</span>
+<span class="px-4 py-2 rounded-full data-chip">
+MySQL
+</span>
 
-<span class="px-4 py-2 rounded-full data-chip">Power BI</span>
+<span class="px-4 py-2 rounded-full data-chip">
+Excel
+</span>
 
-<span class="px-4 py-2 rounded-full data-chip">Pandas</span>
+<span class="px-4 py-2 rounded-full data-chip">
+Power BI
+</span>
 
-<span class="px-4 py-2 rounded-full data-chip">NumPy</span>
+<span class="px-4 py-2 rounded-full data-chip">
+Pandas
+</span>
 
-<span class="px-4 py-2 rounded-full data-chip">Data Analysis</span>
+<span class="px-4 py-2 rounded-full data-chip">
+NumPy
+</span>
 
-<span class="px-4 py-2 rounded-full data-chip">Git & GitHub</span>
+<span class="px-4 py-2 rounded-full data-chip">
+Data Analysis
+</span>
+
+<span class="px-4 py-2 rounded-full data-chip">
+Git & GitHub
+</span>
 
 <span class="px-4 py-2 rounded-full data-chip">
 Machine Learning Basics
 </span>
+
 
 </div>
 
@@ -460,17 +647,25 @@ Machine Learning Basics
 
 </section>
 
-<!-- ================= PROJECTS ================= -->
+
+
+<!-- ===================================================== -->
+<!-- PROJECTS -->
+<!-- ===================================================== -->
 
 <section id="projects" class="py-24">
 
 <div class="max-w-6xl mx-auto px-5 md:px-6">
 
+
 <div class="mb-12">
 
 <h2 class="text-4xl md:text-5xl font-bold mb-4">
+
 Featured Projects
+
 </h2>
+
 
 <p class="text-lg text-slate-400 max-w-2xl">
 
@@ -481,15 +676,24 @@ Python, SQL, Excel and machine learning.
 
 </div>
 
+
+
 <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
 
-<!-- Project 1 -->
+
+
+<!-- ===================================================== -->
+<!-- PROJECT 1 : SOIL QUALITY -->
+<!-- ===================================================== -->
 
 <div class="glass-card rounded-xl p-8 flex flex-col">
 
+
 <div class="flex justify-between items-start mb-6">
 
-<div class="w-12 h-12 rounded-lg bg-blue-500/10
+
+<div
+class="w-12 h-12 rounded-lg bg-blue-500/10
 flex items-center justify-center border border-blue-500/30">
 
 <span class="material-symbols-outlined">
@@ -498,24 +702,26 @@ nature
 
 </div>
 
-<a
-href="https://github.com/poojahippargi67-rgb"
-target="_blank"
-rel="noopener noreferrer">
 
-<span class="material-symbols-outlined">
-open_in_new
-</span>
+<!--
+NO LIVE WEBSITE LINK
 
-</a>
+This project currently does not have
+a confirmed online/deployed website.
+
+Therefore the Live View icon is intentionally removed.
+-->
 
 </div>
+
+
 
 <h3 class="text-2xl font-semibold mb-4">
 
 Soil Quality Analysis and Prediction
 
 </h3>
+
 
 <p class="text-slate-400 leading-7 mb-6">
 
@@ -525,7 +731,10 @@ agricultural datasets.
 
 </p>
 
+
+
 <div class="flex flex-wrap gap-2 mb-6">
+
 
 <span class="px-3 py-1 rounded border border-white/10 text-sm">
 Python
@@ -543,7 +752,12 @@ Scikit-learn
 Machine Learning
 </span>
 
+
 </div>
+
+
+
+<!-- GitHub Source -->
 
 <a
 href="https://github.com/poojahippargi67-rgb"
@@ -555,15 +769,23 @@ View Source on GitHub
 
 </a>
 
+
 </div>
 
-<!-- Project 2 -->
+
+
+<!-- ===================================================== -->
+<!-- PROJECT 2 : EXCEL -->
+<!-- ===================================================== -->
 
 <div class="glass-card rounded-xl p-8 flex flex-col">
 
+
 <div class="flex justify-between items-start mb-6">
 
-<div class="w-12 h-12 rounded-lg bg-orange-500/10
+
+<div
+class="w-12 h-12 rounded-lg bg-orange-500/10
 flex items-center justify-center border border-orange-500/30">
 
 <span class="material-symbols-outlined !text-orange-500">
@@ -572,24 +794,26 @@ bar_chart
 
 </div>
 
-<a
-href="https://github.com/poojahippargi67-rgb"
-target="_blank"
-rel="noopener noreferrer">
 
-<span class="material-symbols-outlined">
-open_in_new
-</span>
+<!--
+NO LIVE WEBSITE LINK
 
-</a>
+This project currently does not have
+a confirmed online/deployed website.
+
+Therefore the Live View icon is intentionally removed.
+-->
 
 </div>
+
+
 
 <h3 class="text-2xl font-semibold mb-4">
 
 Excel Data Analysis Project
 
 </h3>
+
 
 <p class="text-slate-400 leading-7 mb-6">
 
@@ -599,7 +823,10 @@ data-cleaning techniques.
 
 </p>
 
+
+
 <div class="flex flex-wrap gap-2 mb-6">
+
 
 <span class="px-3 py-1 rounded border border-white/10 text-sm">
 Excel
@@ -613,7 +840,12 @@ Power BI
 SQL
 </span>
 
+
 </div>
+
+
+
+<!-- GitHub Source -->
 
 <a
 href="https://github.com/poojahippargi67-rgb"
@@ -625,7 +857,9 @@ View Source on GitHub
 
 </a>
 
+
 </div>
+
 
 </div>
 
@@ -633,11 +867,16 @@ View Source on GitHub
 
 </section>
 
-<!-- ================= SERVICES ================= -->
+
+
+<!-- ===================================================== -->
+<!-- SERVICES -->
+<!-- ===================================================== -->
 
 <section id="services" class="py-24">
 
 <div class="max-w-6xl mx-auto px-5 md:px-6">
+
 
 <div class="mb-12">
 
@@ -649,7 +888,14 @@ Services
 
 </div>
 
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+
+<div
+class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+
+
+<!-- Data Analysis -->
 
 <div class="glass-card p-6 rounded-lg">
 
@@ -667,6 +913,10 @@ Extracting useful insights from raw datasets.
 
 </div>
 
+
+
+<!-- SQL -->
+
 <div class="glass-card p-6 rounded-lg">
 
 <span class="material-symbols-outlined mb-4">
@@ -682,6 +932,10 @@ Data extraction and analysis using SQL queries.
 </p>
 
 </div>
+
+
+
+<!-- Excel -->
 
 <div class="glass-card p-6 rounded-lg">
 
@@ -699,6 +953,10 @@ Creating professional reports and dashboards.
 
 </div>
 
+
+
+<!-- Power BI -->
+
 <div class="glass-card p-6 rounded-lg">
 
 <span class="material-symbols-outlined mb-4">
@@ -714,6 +972,10 @@ Interactive business intelligence dashboards.
 </p>
 
 </div>
+
+
+
+<!-- Python -->
 
 <div class="glass-card p-6 rounded-lg">
 
@@ -731,6 +993,10 @@ Data processing and analysis using Python.
 
 </div>
 
+
+
+<!-- Visualization -->
+
 <div class="glass-card p-6 rounded-lg">
 
 <span class="material-symbols-outlined mb-4">
@@ -747,25 +1013,35 @@ Turning data into meaningful visual insights.
 
 </div>
 
+
 </div>
 
 </div>
 
 </section>
 
-<!-- ================= CONTACT ================= -->
+
+
+<!-- ===================================================== -->
+<!-- CONTACT -->
+<!-- ===================================================== -->
 
 <section id="contact" class="py-24">
 
 <div class="max-w-5xl mx-auto px-5 md:px-6">
 
+
 <div class="glass-card rounded-2xl p-8 md:p-12">
+
 
 <div class="text-center mb-10">
 
 <h2 class="text-4xl md:text-5xl font-bold mb-4">
+
 Let's Connect
+
 </h2>
+
 
 <p class="text-slate-400 text-lg">
 
@@ -776,30 +1052,43 @@ Feel free to contact me.
 
 </div>
 
+
+
 <div class="grid grid-cols-1 md:grid-cols-2 gap-12">
 
-<!-- Contact Form -->
+
+
+<!-- ===================================================== -->
+<!-- CONTACT FORM -->
+<!-- ===================================================== -->
 
 <form
 action="https://formsubmit.co/poojahippargi67@gmail.com"
 method="POST"
 class="space-y-5">
 
+
 <input
 type="hidden"
 name="_subject"
 value="New Portfolio Contact Message"/>
+
 
 <input
 type="hidden"
 name="_captcha"
 value="false"/>
 
+
+
+<!-- Name -->
+
 <div>
 
 <label class="block text-sm text-slate-400 mb-2">
 Name
 </label>
+
 
 <input
 name="name"
@@ -812,11 +1101,16 @@ type="text"/>
 
 </div>
 
+
+
+<!-- Email -->
+
 <div>
 
 <label class="block text-sm text-slate-400 mb-2">
 Email
 </label>
+
 
 <input
 name="email"
@@ -829,11 +1123,16 @@ type="email"/>
 
 </div>
 
+
+
+<!-- Message -->
+
 <div>
 
 <label class="block text-sm text-slate-400 mb-2">
 Message
 </label>
+
 
 <textarea
 name="message"
@@ -845,6 +1144,10 @@ focus:border-blue-500 outline-none resize-none"
 placeholder="Write your message..."></textarea>
 
 </div>
+
+
+
+<!-- Submit -->
 
 <button
 type="submit"
@@ -859,17 +1162,26 @@ send
 
 </button>
 
+
 </form>
 
-<!-- Contact Information -->
+
+
+<!-- ===================================================== -->
+<!-- CONTACT INFORMATION -->
+<!-- ===================================================== -->
 
 <div class="flex flex-col justify-center space-y-8">
+
+
 
 <!-- Email -->
 
 <div class="flex items-start gap-4">
 
-<div class="w-11 h-11 rounded-full bg-blue-500/10
+
+<div
+class="w-11 h-11 rounded-full bg-blue-500/10
 flex items-center justify-center">
 
 <span class="material-symbols-outlined">
@@ -878,17 +1190,19 @@ mail
 
 </div>
 
+
 <div>
 
 <h4 class="text-sm text-slate-400 mb-1">
 Email
 </h4>
 
+
 <a
 href="mailto:poojahippargi67@gmail.com"
 class="hover:text-blue-400 transition">
 
-[poojahippargi67@gmail.com](mailto:poojahippargi67@gmail.com)
+poojahippargi67@gmail.com
 
 </a>
 
@@ -896,11 +1210,15 @@ class="hover:text-blue-400 transition">
 
 </div>
 
+
+
 <!-- LinkedIn -->
 
 <div class="flex items-start gap-4">
 
-<div class="w-11 h-11 rounded-full bg-blue-500/10
+
+<div
+class="w-11 h-11 rounded-full bg-blue-500/10
 flex items-center justify-center">
 
 <span class="material-symbols-outlined">
@@ -909,11 +1227,13 @@ link
 
 </div>
 
+
 <div>
 
 <h4 class="text-sm text-slate-400 mb-1">
 LinkedIn
 </h4>
+
 
 <a
 href="https://linkedin.com/in/pooja-hippargi"
@@ -929,11 +1249,15 @@ linkedin.com/in/pooja-hippargi
 
 </div>
 
+
+
 <!-- GitHub -->
 
 <div class="flex items-start gap-4">
 
-<div class="w-11 h-11 rounded-full bg-blue-500/10
+
+<div
+class="w-11 h-11 rounded-full bg-blue-500/10
 flex items-center justify-center">
 
 <span class="material-symbols-outlined">
@@ -942,11 +1266,13 @@ code
 
 </div>
 
+
 <div>
 
 <h4 class="text-sm text-slate-400 mb-1">
 GitHub
 </h4>
+
 
 <a
 href="https://github.com/poojahippargi67-rgb"
@@ -962,11 +1288,15 @@ github.com/poojahippargi67-rgb
 
 </div>
 
+
+
 <!-- Location -->
 
 <div class="flex items-start gap-4">
 
-<div class="w-11 h-11 rounded-full bg-blue-500/10
+
+<div
+class="w-11 h-11 rounded-full bg-blue-500/10
 flex items-center justify-center">
 
 <span class="material-symbols-outlined">
@@ -975,11 +1305,13 @@ location_on
 
 </div>
 
+
 <div>
 
 <h4 class="text-sm text-slate-400 mb-1">
 Location
 </h4>
+
 
 <p>
 Kolhapur, Maharashtra, India
@@ -988,6 +1320,7 @@ Kolhapur, Maharashtra, India
 </div>
 
 </div>
+
 
 </div>
 
@@ -999,15 +1332,22 @@ Kolhapur, Maharashtra, India
 
 </section>
 
+
 </main>
 
-<!-- ================= FOOTER ================= -->
+
+
+<!-- ===================================================== -->
+<!-- FOOTER -->
+<!-- ===================================================== -->
 
 <footer class="bg-[#0b0e15] border-t border-white/10 py-10">
 
-<div class="max-w-6xl mx-auto px-5 md:px-6
+<div
+class="max-w-6xl mx-auto px-5 md:px-6
 flex flex-col md:flex-row justify-between
 items-center gap-5">
+
 
 <p class="text-sm text-blue-400 font-mono">
 
@@ -1016,7 +1356,9 @@ Built with Precision.
 
 </p>
 
+
 <div class="flex gap-5">
+
 
 <a
 href="https://linkedin.com/in/pooja-hippargi"
@@ -1028,6 +1370,7 @@ LinkedIn
 
 </a>
 
+
 <a
 href="https://github.com/poojahippargi67-rgb"
 target="_blank"
@@ -1038,6 +1381,7 @@ GitHub
 
 </a>
 
+
 <a
 href="mailto:poojahippargi67@gmail.com"
 class="text-slate-400 hover:text-orange-400 transition">
@@ -1046,13 +1390,18 @@ Email
 
 </a>
 
+
 </div>
 
 </div>
 
 </footer>
 
-<!-- ================= JAVASCRIPT ================= -->
+
+
+<!-- ===================================================== -->
+<!-- JAVASCRIPT -->
+<!-- ===================================================== -->
 
 <script>
 
@@ -1064,6 +1413,7 @@ function toggleMenu() {
 
 }
 
+
 function closeMenu() {
 
     const menu = document.getElementById("mobileMenu");
@@ -1074,5 +1424,8 @@ function closeMenu() {
 
 </script>
 
+
 </body>
+
 </html>
+```
