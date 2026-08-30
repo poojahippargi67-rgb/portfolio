@@ -1,0 +1,1078 @@
+<!DOCTYPE html>
+
+<html class="dark" lang="en">
+
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+
+<title>Pooja Hippargi Portfolio</title>
+
+<!-- Fonts -->
+
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet"/>
+
+<!-- Material Symbols -->
+
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+
+<!-- Tailwind CSS -->
+
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+<script>
+tailwind.config = {
+  darkMode: "class",
+  theme: {
+    extend: {
+      colors: {
+        primary: "#3B82F6",
+        orange: "#F97316",
+        background: "#000000",
+        surface: "#0F172A",
+        text: "#FFFFFF",
+        muted: "#94A3B8"
+      },
+      fontFamily: {
+        display: ["Geist"],
+        body: ["Geist"],
+        mono: ["JetBrains Mono"]
+      }
+    }
+  }
+}
+</script>
+
+<style>
+* {
+    scroll-behavior: smooth;
+}
+
+body {
+    background: #000000;
+    color: #ffffff;
+    font-family: Geist, sans-serif;
+    -webkit-font-smoothing: antialiased;
+}
+
+.glass-card {
+    background: #0F172A;
+    border: 1px solid rgba(255,255,255,0.10);
+    transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+    border-color: rgba(59,130,246,0.5);
+    box-shadow: 0 0 30px rgba(59,130,246,0.15);
+    transform: translateY(-3px);
+}
+
+.btn-primary {
+    background: #3B82F6;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn-primary:hover {
+    filter: brightness(1.15);
+    transform: translateY(-2px);
+}
+
+.btn-cta {
+    background: #F97316;
+    color: white;
+    transition: all 0.2s ease;
+}
+
+.btn-cta:hover {
+    filter: brightness(1.1);
+    transform: translateY(-2px);
+}
+
+.btn-ghost {
+    background: transparent;
+    border: 1px solid #3B82F6;
+    color: #3B82F6;
+    transition: all 0.2s ease;
+}
+
+.btn-ghost:hover {
+    background: rgba(59,130,246,0.10);
+}
+
+.data-chip {
+    background: rgba(59,130,246,0.10);
+    border: 1px solid rgba(59,130,246,0.30);
+    color: #60A5FA;
+}
+
+.material-symbols-outlined {
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 300,
+    'GRAD' 0,
+    'opsz' 24;
+    color: #3B82F6;
+}
+
+.bg-grid {
+    background-size: 40px 40px;
+    background-image:
+        linear-gradient(to right, rgba(255,255,255,0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(255,255,255,0.03) 1px, transparent 1px);
+}
+
+.nav-active {
+    color: #3B82F6 !important;
+    font-weight: bold;
+    border-bottom: 2px solid #3B82F6;
+    padding-bottom: 4px;
+}
+
+.mobile-menu {
+    display: none;
+}
+
+.mobile-menu.active {
+    display: flex;
+}
+
+section {
+    scroll-margin-top: 90px;
+}
+</style>
+
+</head>
+
+<body class="bg-black text-white overflow-x-hidden">
+
+<!-- ================= NAVBAR ================= -->
+
+<nav class="fixed top-0 w-full z-50 bg-black/80 backdrop-blur-xl border-b border-white/10">
+
+<div class="max-w-6xl mx-auto px-5 md:px-6 h-20 flex justify-between items-center">
+
+<!-- Portfolio Name -->
+
+<a href="#home"
+class="font-display text-2xl font-bold tracking-tight hover:text-blue-400 transition">
+
+Pooja Hippargi Portfolio
+
+</a>
+
+<!-- Desktop Navigation -->
+
+<div class="hidden md:flex items-center gap-7">
+
+<a href="#home" class="nav-active">Home</a>
+
+<a href="#about"
+class="text-slate-400 hover:text-blue-400 transition">
+About </a>
+
+<a href="#skills"
+class="text-slate-400 hover:text-blue-400 transition">
+Skills </a>
+
+<a href="#projects"
+class="text-slate-400 hover:text-blue-400 transition">
+Projects </a>
+
+<a href="#services"
+class="text-slate-400 hover:text-blue-400 transition">
+Services </a>
+
+<a href="#contact"
+class="text-slate-400 hover:text-blue-400 transition">
+Contact </a>
+
+</div>
+
+<!-- Mobile Menu Button -->
+
+<button
+onclick="toggleMenu()"
+class="md:hidden p-2"
+aria-label="Open menu">
+
+<span class="material-symbols-outlined text-white">
+menu
+</span>
+
+</button>
+
+</div>
+
+<!-- Mobile Navigation -->
+
+<div id="mobileMenu"
+class="mobile-menu md:hidden flex-col bg-black border-t border-white/10 px-6 py-5 gap-5">
+
+<a onclick="closeMenu()" href="#home">Home</a>
+
+<a onclick="closeMenu()" href="#about">About</a>
+
+<a onclick="closeMenu()" href="#skills">Skills</a>
+
+<a onclick="closeMenu()" href="#projects">Projects</a>
+
+<a onclick="closeMenu()" href="#services">Services</a>
+
+<a onclick="closeMenu()" href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+<!-- ================= MAIN ================= -->
+
+<main>
+
+<!-- ================= HERO ================= -->
+
+<section id="home"
+class="relative min-h-screen flex items-center pt-32 pb-24 bg-grid">
+
+<div class="max-w-6xl mx-auto px-5 md:px-6 w-full">
+
+<div class="grid grid-cols-1 md:grid-cols-12 gap-10 items-center">
+
+<div class="md:col-span-8">
+
+<div class="inline-flex items-center gap-2 px-4 py-2 rounded-full data-chip font-mono text-sm mb-6">
+
+<span class="w-2 h-2 rounded-full bg-blue-500 animate-pulse"></span>
+
+Available for Opportunities
+
+</div>
+
+<h1 class="text-4xl md:text-6xl lg:text-7xl font-bold tracking-tight leading-tight mb-6">
+
+Hi, I'm
+
+<span class="text-blue-500">
+Pooja Shrishail Hippargi
+</span>
+
+</h1>
+
+<h2 class="text-xl md:text-2xl text-blue-400 font-medium mb-6">
+
+Computer Science Engineering Student
+
+<span class="text-slate-500"> | </span>
+
+Aspiring Data Analyst
+
+</h2>
+
+<p class="text-lg text-slate-400 max-w-2xl leading-8 mb-8">
+
+Passionate about turning complex data into actionable insights
+through technical precision and analytical thinking. I specialize
+in Python, SQL, Excel, Power BI and data analytics.
+
+</p>
+
+<div class="flex flex-wrap gap-4">
+
+<a href="#projects"
+class="btn-primary px-6 py-3 rounded-md font-mono inline-flex items-center gap-2">
+
+View My Projects
+
+<span class="material-symbols-outlined !text-white text-sm">
+arrow_forward
+</span>
+
+</a>
+
+<a href="#contact"
+class="btn-cta px-6 py-3 rounded-md font-mono inline-flex items-center gap-2">
+
+Let's Connect
+
+<span class="material-symbols-outlined !text-white text-sm">
+arrow_forward
+</span>
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Hero Data Graphic -->
+
+<div class="hidden md:block md:col-span-4">
+
+<div class="glass-card rounded-xl h-[400px] p-8 flex items-end gap-4">
+
+<div class="w-1/5 bg-blue-500/30 h-[30%] rounded-t"></div>
+
+<div class="w-1/5 bg-blue-500/50 h-[50%] rounded-t"></div>
+
+<div class="w-1/5 bg-blue-500/80 h-[80%] rounded-t relative">
+
+<span class="absolute -top-8 left-1/2 -translate-x-1/2
+text-orange-500 font-mono text-sm">
+
+94%
+
+</span>
+
+</div>
+
+<div class="w-1/5 bg-blue-500/50 h-[60%] rounded-t"></div>
+
+<div class="w-1/5 bg-orange-500/60 h-[40%] rounded-t"></div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= ABOUT ================= -->
+
+<section id="about" class="py-24">
+
+<div class="max-w-6xl mx-auto px-5 md:px-6">
+
+<div class="grid grid-cols-1 md:grid-cols-12 gap-8">
+
+<div class="md:col-span-7 glass-card rounded-xl p-8 md:p-10">
+
+<div class="flex items-center gap-3 mb-6">
+
+<span class="material-symbols-outlined">
+person
+</span>
+
+<h2 class="text-3xl font-bold">
+About Me
+</h2>
+
+</div>
+
+<p class="text-slate-400 text-lg leading-8 mb-6">
+
+I am a detail-oriented Computer Science Engineering student
+with a strong foundation in programming, databases and data
+analytics.
+
+</p>
+
+<p class="text-slate-400 text-lg leading-8">
+
+My career goal is to become a Data Analyst and transform raw
+data into meaningful insights that support better business
+decisions.
+
+</p>
+
+<div class="mt-8 pt-6 border-t border-white/10 grid grid-cols-2 gap-6">
+
+<div>
+
+<p class="text-blue-400 font-mono text-sm mb-1">
+EDUCATION
+</p>
+
+<p class="font-medium">
+B.Tech Computer Science Engineering
+</p>
+
+</div>
+
+<div>
+
+<p class="text-blue-400 font-mono text-sm mb-1">
+FOCUS
+</p>
+
+<p class="font-medium">
+Data Analytics
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+<!-- Skills -->
+
+<div id="skills"
+class="md:col-span-5 glass-card rounded-xl p-8 md:p-10">
+
+<div class="flex items-center gap-3 mb-6">
+
+<span class="material-symbols-outlined">
+code_blocks
+</span>
+
+<h2 class="text-3xl font-bold">
+Skills
+</h2>
+
+</div>
+
+<div class="flex flex-wrap gap-3">
+
+<span class="px-4 py-2 rounded-full data-chip">Python</span>
+
+<span class="px-4 py-2 rounded-full data-chip">SQL</span>
+
+<span class="px-4 py-2 rounded-full data-chip">MySQL</span>
+
+<span class="px-4 py-2 rounded-full data-chip">Excel</span>
+
+<span class="px-4 py-2 rounded-full data-chip">Power BI</span>
+
+<span class="px-4 py-2 rounded-full data-chip">Pandas</span>
+
+<span class="px-4 py-2 rounded-full data-chip">NumPy</span>
+
+<span class="px-4 py-2 rounded-full data-chip">Data Analysis</span>
+
+<span class="px-4 py-2 rounded-full data-chip">Git & GitHub</span>
+
+<span class="px-4 py-2 rounded-full data-chip">
+Machine Learning Basics
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= PROJECTS ================= -->
+
+<section id="projects" class="py-24">
+
+<div class="max-w-6xl mx-auto px-5 md:px-6">
+
+<div class="mb-12">
+
+<h2 class="text-4xl md:text-5xl font-bold mb-4">
+Featured Projects
+</h2>
+
+<p class="text-lg text-slate-400 max-w-2xl">
+
+Projects that demonstrate my skills in data analysis,
+Python, SQL, Excel and machine learning.
+
+</p>
+
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+
+<!-- Project 1 -->
+
+<div class="glass-card rounded-xl p-8 flex flex-col">
+
+<div class="flex justify-between items-start mb-6">
+
+<div class="w-12 h-12 rounded-lg bg-blue-500/10
+flex items-center justify-center border border-blue-500/30">
+
+<span class="material-symbols-outlined">
+nature
+</span>
+
+</div>
+
+<a
+href="https://github.com/poojahippargi67-rgb"
+target="_blank"
+rel="noopener noreferrer">
+
+<span class="material-symbols-outlined">
+open_in_new
+</span>
+
+</a>
+
+</div>
+
+<h3 class="text-2xl font-semibold mb-4">
+
+Soil Quality Analysis and Prediction
+
+</h3>
+
+<p class="text-slate-400 leading-7 mb-6">
+
+Developed a machine learning-based system to analyze
+soil health metrics and predict soil quality using
+agricultural datasets.
+
+</p>
+
+<div class="flex flex-wrap gap-2 mb-6">
+
+<span class="px-3 py-1 rounded border border-white/10 text-sm">
+Python
+</span>
+
+<span class="px-3 py-1 rounded border border-white/10 text-sm">
+Pandas
+</span>
+
+<span class="px-3 py-1 rounded border border-white/10 text-sm">
+Scikit-learn
+</span>
+
+<span class="px-3 py-1 rounded border border-white/10 text-sm">
+Machine Learning
+</span>
+
+</div>
+
+<a
+href="https://github.com/poojahippargi67-rgb"
+target="_blank"
+rel="noopener noreferrer"
+class="btn-ghost text-center py-3 rounded-md font-mono">
+
+View Source on GitHub
+
+</a>
+
+</div>
+
+<!-- Project 2 -->
+
+<div class="glass-card rounded-xl p-8 flex flex-col">
+
+<div class="flex justify-between items-start mb-6">
+
+<div class="w-12 h-12 rounded-lg bg-orange-500/10
+flex items-center justify-center border border-orange-500/30">
+
+<span class="material-symbols-outlined !text-orange-500">
+bar_chart
+</span>
+
+</div>
+
+<a
+href="https://github.com/poojahippargi67-rgb"
+target="_blank"
+rel="noopener noreferrer">
+
+<span class="material-symbols-outlined">
+open_in_new
+</span>
+
+</a>
+
+</div>
+
+<h3 class="text-2xl font-semibold mb-4">
+
+Excel Data Analysis Project
+
+</h3>
+
+<p class="text-slate-400 leading-7 mb-6">
+
+Created an Excel-based data analysis and reporting
+dashboard using formulas, pivot tables, charts and
+data-cleaning techniques.
+
+</p>
+
+<div class="flex flex-wrap gap-2 mb-6">
+
+<span class="px-3 py-1 rounded border border-white/10 text-sm">
+Excel
+</span>
+
+<span class="px-3 py-1 rounded border border-white/10 text-sm">
+Power BI
+</span>
+
+<span class="px-3 py-1 rounded border border-white/10 text-sm">
+SQL
+</span>
+
+</div>
+
+<a
+href="https://github.com/poojahippargi67-rgb"
+target="_blank"
+rel="noopener noreferrer"
+class="btn-ghost text-center py-3 rounded-md font-mono">
+
+View Source on GitHub
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= SERVICES ================= -->
+
+<section id="services" class="py-24">
+
+<div class="max-w-6xl mx-auto px-5 md:px-6">
+
+<div class="mb-12">
+
+<h2 class="text-4xl font-bold mb-3">
+Services
+</h2>
+
+<div class="h-1 w-14 bg-orange-500 rounded"></div>
+
+</div>
+
+<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
+
+<div class="glass-card p-6 rounded-lg">
+
+<span class="material-symbols-outlined mb-4">
+analytics
+</span>
+
+<h3 class="text-xl font-semibold mb-2">
+Data Analysis
+</h3>
+
+<p class="text-slate-400">
+Extracting useful insights from raw datasets.
+</p>
+
+</div>
+
+<div class="glass-card p-6 rounded-lg">
+
+<span class="material-symbols-outlined mb-4">
+database
+</span>
+
+<h3 class="text-xl font-semibold mb-2">
+SQL Data Analysis
+</h3>
+
+<p class="text-slate-400">
+Data extraction and analysis using SQL queries.
+</p>
+
+</div>
+
+<div class="glass-card p-6 rounded-lg">
+
+<span class="material-symbols-outlined mb-4">
+table_chart
+</span>
+
+<h3 class="text-xl font-semibold mb-2">
+Excel Reporting
+</h3>
+
+<p class="text-slate-400">
+Creating professional reports and dashboards.
+</p>
+
+</div>
+
+<div class="glass-card p-6 rounded-lg">
+
+<span class="material-symbols-outlined mb-4">
+dashboard
+</span>
+
+<h3 class="text-xl font-semibold mb-2">
+Power BI Dashboards
+</h3>
+
+<p class="text-slate-400">
+Interactive business intelligence dashboards.
+</p>
+
+</div>
+
+<div class="glass-card p-6 rounded-lg">
+
+<span class="material-symbols-outlined mb-4">
+terminal
+</span>
+
+<h3 class="text-xl font-semibold mb-2">
+Python Analytics
+</h3>
+
+<p class="text-slate-400">
+Data processing and analysis using Python.
+</p>
+
+</div>
+
+<div class="glass-card p-6 rounded-lg">
+
+<span class="material-symbols-outlined mb-4">
+insights
+</span>
+
+<h3 class="text-xl font-semibold mb-2">
+Data Visualization
+</h3>
+
+<p class="text-slate-400">
+Turning data into meaningful visual insights.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<!-- ================= CONTACT ================= -->
+
+<section id="contact" class="py-24">
+
+<div class="max-w-5xl mx-auto px-5 md:px-6">
+
+<div class="glass-card rounded-2xl p-8 md:p-12">
+
+<div class="text-center mb-10">
+
+<h2 class="text-4xl md:text-5xl font-bold mb-4">
+Let's Connect
+</h2>
+
+<p class="text-slate-400 text-lg">
+
+Interested in collaboration or career opportunities?
+Feel free to contact me.
+
+</p>
+
+</div>
+
+<div class="grid grid-cols-1 md:grid-cols-2 gap-12">
+
+<!-- Contact Form -->
+
+<form
+action="https://formsubmit.co/poojahippargi67@gmail.com"
+method="POST"
+class="space-y-5">
+
+<input
+type="hidden"
+name="_subject"
+value="New Portfolio Contact Message"/>
+
+<input
+type="hidden"
+name="_captcha"
+value="false"/>
+
+<div>
+
+<label class="block text-sm text-slate-400 mb-2">
+Name
+</label>
+
+<input
+name="name"
+required
+class="w-full bg-black border border-white/20
+rounded-md px-4 py-3 text-white
+focus:border-blue-500 outline-none"
+placeholder="Your Name"
+type="text"/>
+
+</div>
+
+<div>
+
+<label class="block text-sm text-slate-400 mb-2">
+Email
+</label>
+
+<input
+name="email"
+required
+class="w-full bg-black border border-white/20
+rounded-md px-4 py-3 text-white
+focus:border-blue-500 outline-none"
+placeholder="your@email.com"
+type="email"/>
+
+</div>
+
+<div>
+
+<label class="block text-sm text-slate-400 mb-2">
+Message
+</label>
+
+<textarea
+name="message"
+required
+rows="5"
+class="w-full bg-black border border-white/20
+rounded-md px-4 py-3 text-white
+focus:border-blue-500 outline-none resize-none"
+placeholder="Write your message..."></textarea>
+
+</div>
+
+<button
+type="submit"
+class="btn-primary w-full py-3 rounded-md font-mono
+flex justify-center items-center gap-2">
+
+Send Message
+
+<span class="material-symbols-outlined !text-white">
+send
+</span>
+
+</button>
+
+</form>
+
+<!-- Contact Information -->
+
+<div class="flex flex-col justify-center space-y-8">
+
+<!-- Email -->
+
+<div class="flex items-start gap-4">
+
+<div class="w-11 h-11 rounded-full bg-blue-500/10
+flex items-center justify-center">
+
+<span class="material-symbols-outlined">
+mail
+</span>
+
+</div>
+
+<div>
+
+<h4 class="text-sm text-slate-400 mb-1">
+Email
+</h4>
+
+<a
+href="mailto:poojahippargi67@gmail.com"
+class="hover:text-blue-400 transition">
+
+[poojahippargi67@gmail.com](mailto:poojahippargi67@gmail.com)
+
+</a>
+
+</div>
+
+</div>
+
+<!-- LinkedIn -->
+
+<div class="flex items-start gap-4">
+
+<div class="w-11 h-11 rounded-full bg-blue-500/10
+flex items-center justify-center">
+
+<span class="material-symbols-outlined">
+link
+</span>
+
+</div>
+
+<div>
+
+<h4 class="text-sm text-slate-400 mb-1">
+LinkedIn
+</h4>
+
+<a
+href="https://linkedin.com/in/pooja-hippargi"
+target="_blank"
+rel="noopener noreferrer"
+class="hover:text-blue-400 transition">
+
+linkedin.com/in/pooja-hippargi
+
+</a>
+
+</div>
+
+</div>
+
+<!-- GitHub -->
+
+<div class="flex items-start gap-4">
+
+<div class="w-11 h-11 rounded-full bg-blue-500/10
+flex items-center justify-center">
+
+<span class="material-symbols-outlined">
+code
+</span>
+
+</div>
+
+<div>
+
+<h4 class="text-sm text-slate-400 mb-1">
+GitHub
+</h4>
+
+<a
+href="https://github.com/poojahippargi67-rgb"
+target="_blank"
+rel="noopener noreferrer"
+class="hover:text-blue-400 transition">
+
+github.com/poojahippargi67-rgb
+
+</a>
+
+</div>
+
+</div>
+
+<!-- Location -->
+
+<div class="flex items-start gap-4">
+
+<div class="w-11 h-11 rounded-full bg-blue-500/10
+flex items-center justify-center">
+
+<span class="material-symbols-outlined">
+location_on
+</span>
+
+</div>
+
+<div>
+
+<h4 class="text-sm text-slate-400 mb-1">
+Location
+</h4>
+
+<p>
+Kolhapur, Maharashtra, India
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+<!-- ================= FOOTER ================= -->
+
+<footer class="bg-[#0b0e15] border-t border-white/10 py-10">
+
+<div class="max-w-6xl mx-auto px-5 md:px-6
+flex flex-col md:flex-row justify-between
+items-center gap-5">
+
+<p class="text-sm text-blue-400 font-mono">
+
+© 2026 Pooja Hippargi Portfolio.
+Built with Precision.
+
+</p>
+
+<div class="flex gap-5">
+
+<a
+href="https://linkedin.com/in/pooja-hippargi"
+target="_blank"
+rel="noopener noreferrer"
+class="text-slate-400 hover:text-orange-400 transition">
+
+LinkedIn
+
+</a>
+
+<a
+href="https://github.com/poojahippargi67-rgb"
+target="_blank"
+rel="noopener noreferrer"
+class="text-slate-400 hover:text-orange-400 transition">
+
+GitHub
+
+</a>
+
+<a
+href="mailto:poojahippargi67@gmail.com"
+class="text-slate-400 hover:text-orange-400 transition">
+
+Email
+
+</a>
+
+</div>
+
+</div>
+
+</footer>
+
+<!-- ================= JAVASCRIPT ================= -->
+
+<script>
+
+function toggleMenu() {
+
+    const menu = document.getElementById("mobileMenu");
+
+    menu.classList.toggle("active");
+
+}
+
+function closeMenu() {
+
+    const menu = document.getElementById("mobileMenu");
+
+    menu.classList.remove("active");
+
+}
+
+</script>
+
+</body>
+</html>
